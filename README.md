@@ -37,13 +37,13 @@ Unzip and structure the contents as follows:
 ```
 multimodal-hate-speech/
 ├── img_resized/               # Folder containing resized tweet images (*.jpg)
-├── img_txt/                   # Folder for text extracted from images (if any)
+├── img_txt/                   # Folder for text extracted from images
 ├── splits/                    # Data split IDs
 │   ├── train_ids.txt
 │   ├── val_ids.txt
 │   └── test_ids.txt
 ├── MMHS150K_GT.json           # Annotated dataset (JSON)
-├── hatespeech_keywords.txt    # Supplementary keyword list
+├── hatespeech_keywords.txt    # Keyword list
 ├── MMHS150K_readme.txt        # Original dataset readme
 │
 ├── preprocess{i}.py               # Preprocess train split for model i
