@@ -1,21 +1,50 @@
 # Multimodal Hate Speech Detection (MMHS150K)
 
-This project implements multimodal hate speech detection using both **text** (via BERT) and **image** (via ResNet18) features from the MMHS150K dataset. It includes preprocessing, training, evaluation, and visualization scripts for **six different model architectures**.
+This project implements multimodal hate speech detection using both **text** and **image** features from the MMHS150K dataset. It includes preprocessing, training, evaluation, and visualization scripts for **six different model architectures**.
 
 ---
 
-## 📁 Project Structure
+## ⚙️ Setup
+
+### 🔹 1. Clone the Repository
+
+```bash
+git clone https://github.com/Janojit/Multi-modal-Hate-Speech-Detection-using-MMHS150K-Dataset multimodal-hate-speech
+cd multimodal-hate-speech
+```
+
+### 🔹 2. Create and Activate a Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 🔹 3. Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### 🔹 4. Download and Prepare the Dataset
+
+Download the dataset manually from Kaggle:
+
+🔗 [MMHS150K - Multimodal Hate Speech Dataset](https://www.kaggle.com/datasets/victorcallejasf/multimodal-hate-speech)
+
+Unzip and structure the contents as follows:
 
 ```
 multimodal-hate-speech/
-├── data/                      # JSON data and ID splits (user-provided)
-│   ├── MMHS150K_GT.json
-│   └── splits/
-│       ├── train_ids.txt
-│       ├── val_ids.txt
-│       └── test_ids.txt
-│
-├── img_resized/              # Resized tweet images (*.jpg)
+├── img_resized/               # Folder containing resized tweet images (*.jpg)
+├── img_txt/                   # Folder for text extracted from images (if any)
+├── splits/                    # Data split IDs
+│   ├── train_ids.txt
+│   ├── val_ids.txt
+│   └── test_ids.txt
+├── MMHS150K_GT.json           # Annotated dataset (JSON)
+├── hatespeech_keywords.txt    # Supplementary keyword list
+├── MMHS150K_readme.txt        # Original dataset readme
 │
 ├── preprocess{i}.py               # Preprocess train split for model i
 ├── preprocess_val{i}.py           # Preprocess val split for model i
@@ -29,22 +58,6 @@ multimodal-hate-speech/
 ├── requirements.txt          # Dependency list
 └── README.md                 # Project documentation
 ```
-
----
-
-## ⚙️ Setup
-
-```bash
-pip install -r requirements.txt
-```
-
-### Folders
-
-Ensure the following are present:
-
-- `data/MMHS150K_GT.json`
-- `data/splits/train_ids.txt`, `val_ids.txt`, `test_ids.txt`
-- `img_resized/` with `{tweet_id}.jpg` files
 
 ---
 
@@ -100,6 +113,7 @@ python evaluate.py
   - `confusion_matrices_comparison.jpg`
 
 ---
+
 
 ## 👥 Authors
 
